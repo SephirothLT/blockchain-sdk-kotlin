@@ -1,4 +1,4 @@
-name: Create release branch
+name: Create merge release branch
 on:
   workflow_dispatch:
 
@@ -9,7 +9,7 @@ jobs:
   createrelease:
     name: Create merge release branch
     runs-on: ubuntu-latest
-    if: contains(env.BRANCH_NAME, 'release-app_')
+    if: ${{ contains(env.BRANCH_NAME, 'release-app_') }}
     steps:
 
       - name: Checkout
